@@ -21,11 +21,11 @@ $ component install component/history
   This method resets the history index, meaning the next call
   to `.back()` will be this latest value.
 
-### History#back()
+### History#prev()
 
   Cycle backwards through history, returning a value added by `.add()`.
 
-### History#back()
+### History#next()
 
   Cycle forwards through history, returning a value added by `.add()`.
 

@@ -6,9 +6,9 @@ describe('History', function(){
   describe('(arr)', function(){
     it('should populate the history', function(){
       var history = new History(['foo', 'bar', 'baz']);
-      history.back().should.equal('baz');
-      history.back().should.equal('bar');
-      history.back().should.equal('foo');
+      history.prev().should.equal('baz');
+      history.prev().should.equal('bar');
+      history.prev().should.equal('foo');
     })
   })
 
@@ -18,9 +18,9 @@ describe('History', function(){
       history.add('foo');
       history.add('bar');
       history.add('baz');
-      history.back().should.equal('baz');
-      history.back().should.equal('bar');
-      history.back().should.equal('foo');
+      history.prev().should.equal('baz');
+      history.prev().should.equal('bar');
+      history.prev().should.equal('foo');
     })
 
     it('should reset the index', function(){
@@ -28,61 +28,61 @@ describe('History', function(){
       history.add('foo');
       history.add('bar');
       history.add('baz');
-      history.back().should.equal('baz');
-      history.back().should.equal('bar');
+      history.prev().should.equal('baz');
+      history.prev().should.equal('bar');
       history.add('hey');
-      history.back().should.equal('hey');
-      history.back().should.equal('baz');
-      history.back().should.equal('bar');
+      history.prev().should.equal('hey');
+      history.prev().should.equal('baz');
+      history.prev().should.equal('bar');
     })
   })
 
-  describe('.back()', function(){
+  describe('.prev()', function(){
     it('should cycle through the history', function(){
       var history = new History;
       history.add('foo');
       history.add('bar');
       history.add('baz');
-      history.back().should.equal('baz');
-      history.back().should.equal('bar');
-      history.back().should.equal('foo');
+      history.prev().should.equal('baz');
+      history.prev().should.equal('bar');
+      history.prev().should.equal('foo');
     })
 
     it('should cap the index', function(){
       var history = new History;
       history.add('foo');
-      history.back().should.equal('foo');
-      history.back();
-      history.back();
-      history.back();
-      history.back();
-      history.forward().should.equal('foo');
+      history.prev().should.equal('foo');
+      history.prev();
+      history.prev();
+      history.prev();
+      history.prev();
+      history.next().should.equal('foo');
     })
   })
 
-  describe('.forward()', function(){
+  describe('.next()', function(){
     it('should cycle through the history', function(){
       var history = new History;
       history.add('foo');
       history.add('bar');
       history.add('baz');
-      history.back().should.equal('baz');
-      history.back().should.equal('bar');
-      history.back().should.equal('foo');
-      history.forward().should.equal('foo');
-      history.forward().should.equal('bar');
-      history.forward().should.equal('baz');
+      history.prev().should.equal('baz');
+      history.prev().should.equal('bar');
+      history.prev().should.equal('foo');
+      history.next().should.equal('foo');
+      history.next().should.equal('bar');
+      history.next().should.equal('baz');
     })
 
     it('should cap the index', function(){
       var history = new History;
       history.add('foo');
-      history.forward();
-      history.forward();
-      history.forward();
-      history.forward();
-      history.forward();
-      history.back().should.equal('foo');
+      history.next();
+      history.next();
+      history.next();
+      history.next();
+      history.next();
+      history.prev().should.equal('foo');
     })
   })
 
@@ -94,14 +94,14 @@ describe('History', function(){
       history.add('bar');
       history.add('baz');
 
-      history.back().should.equal('baz');
-      history.back().should.equal('bar');
-      assert(null == history.back());
+      history.prev().should.equal('baz');
+      history.prev().should.equal('bar');
+      assert(null == history.prev());
 
       history.add('raz');
-      history.back().should.equal('raz');
-      history.back().should.equal('baz');
-      assert(null == history.back());
+      history.prev().should.equal('raz');
+      history.prev().should.equal('baz');
+      assert(null == history.prev());
     })
   })
 })
