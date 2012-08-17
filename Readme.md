@@ -1,7 +1,7 @@
 
 # History
 
-  Keep track of and cycle through history, for example chat messages.
+  Keep track of and cycle through capped history (chat messages, REPL command-lines etc).
 
 ## Installation
 
@@ -24,12 +24,10 @@ $ component install component/history
 ### History#back()
 
   Cycle backwards through history, returning a value added by `.add()`.
-  When the end of history is reached `undefined` is returned. 
 
 ### History#back()
 
   Cycle forwards through history, returning a value added by `.add()`.
-  When the end of history is reached `undefined` is returned. 
 
 ### History#max(n)
 

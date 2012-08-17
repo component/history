@@ -69,6 +69,7 @@ History.prototype.add = function(val){
  */
 
 History.prototype.back = function(){
+  if (this.i < 0) return;
   return this.vals[this.i--];
 };
 
@@ -80,6 +81,8 @@ History.prototype.back = function(){
  */
 
 History.prototype.forward = function(){
+  var len = this.vals.length;
+  if (this.i == len - 1) return;
   return this.vals[++this.i];
 };
 

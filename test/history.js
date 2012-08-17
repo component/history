@@ -48,11 +48,15 @@ describe('History', function(){
       history.back().should.equal('foo');
     })
 
-    it('should return undefined at the end', function(){
+    it('should cap the index', function(){
       var history = new History;
       history.add('foo');
       history.back().should.equal('foo');
-      assert(undefined === history.back());
+      history.back();
+      history.back();
+      history.back();
+      history.back();
+      history.forward().should.equal('foo');
     })
   })
 
@@ -70,10 +74,15 @@ describe('History', function(){
       history.forward().should.equal('baz');
     })
 
-    it('should return undefined at the end', function(){
+    it('should cap the index', function(){
       var history = new History;
       history.add('foo');
-      assert(undefined === history.forward());
+      history.forward();
+      history.forward();
+      history.forward();
+      history.forward();
+      history.forward();
+      history.back().should.equal('foo');
     })
   })
 
