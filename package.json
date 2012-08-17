@@ -1,0 +1,14 @@
+{
+  "name": "history-component",
+  "description": "Keep track of and cycle through history",
+  "version": "0.0.1",
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "component": {
+    "scripts": {
+      "history": "index.js"
+    }
+  }
+}

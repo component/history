@@ -1,0 +1,7 @@
+{
+  "name": "history",
+  "description": "Keep track of and cycle through history",
+  "keywords": ["history"],
+  "version": "0.0.1",
+  "scripts": ["index.js"]
+}
