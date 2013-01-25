@@ -69,7 +69,6 @@ describe('History', function(){
       history.prev().should.equal('baz');
       history.prev().should.equal('bar');
       history.prev().should.equal('foo');
-      history.next().should.equal('foo');
       history.next().should.equal('bar');
       history.next().should.equal('baz');
     })
