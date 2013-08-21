@@ -10,5 +10,9 @@
     "scripts": {
       "history": "index.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/history.git"
   }
 }
