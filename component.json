@@ -2,7 +2,7 @@
   "name": "history",
   "description": "Keep track of and cycle through history",
   "keywords": ["history", "undo", "redo"],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": ["index.js"],
   "license": "mit"
 }

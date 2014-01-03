@@ -1,7 +1,7 @@
 {
   "name": "history-component",
   "description": "Keep track of and cycle through history",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "devDependencies": {
     "mocha": "*",
     "should": "*"
