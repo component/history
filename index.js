@@ -56,7 +56,7 @@ History.prototype.max = function(n){
  */
 
 History.prototype.add = function(val){
-  this.i = this.vals.push(val) - 1;
+  this.i = this.vals.push(val);
   this.cap();
   return this;
 };
@@ -69,8 +69,8 @@ History.prototype.add = function(val){
  */
 
 History.prototype.prev = function(){
-  if (this.i < 0) return;
-  return this.vals[this.i--];
+  if (this.i <= 0) return;
+  return this.vals[--this.i];
 };
 
 /**
@@ -82,7 +82,7 @@ History.prototype.prev = function(){
 
 History.prototype.next = function(){
   var len = this.vals.length;
-  if (this.i == len - 1) return;
+  if (this.i >= len) return;
   return this.vals[++this.i];
 };
 
@@ -94,6 +94,6 @@ History.prototype.next = function(){
  */
 
 History.prototype.reset = function(){
-  this.i = this.vals.length - 1;
+  this.i = this.vals.length;
   return this;
 };
